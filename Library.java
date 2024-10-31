@@ -183,6 +183,14 @@ public class Library extends Building {
     myLibrary.returnBook("Percy Jackson by Rick Riordan");
     myLibrary.checkOut("Percy Jackson by Rick Riordan");
 
+    ArrayList<String> newSeries = new ArrayList<String>();
+
+    newSeries.add("Hunger Games by Suzanne Collins");
+    newSeries.add("Catching Fire by Suzanne Collins");
+    newSeries.add("Mockingjay by Suzanne Collins");
+
+    myLibrary.addTitle(newSeries);
+
     // Test printing collection
     myLibrary.printCollection();
 

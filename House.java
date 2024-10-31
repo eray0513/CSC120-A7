@@ -135,9 +135,20 @@ public class House extends Building {
     } catch (Exception e){
       System.out.println(e);
     }
-  }
+
+    myHouse.moveIn("Evelyn");
 
     ArrayList<String> secondYears = new ArrayList<String>();
+    secondYears.add("Kylie");
+    secondYears.add("Lisa");
+    secondYears.add("Renee");
+
+    myHouse.moveIn(secondYears);
+
+    System.out.println(myHouse.moveOut("Kylie"));
+
+    System.out.println(myHouse.moveOut("Lisa"));
+  }
 
 
 }

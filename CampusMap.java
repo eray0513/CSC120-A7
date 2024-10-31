@@ -61,7 +61,11 @@ public class CampusMap {
         firstYears.add("Ruby");
         firstYears.add("Vivi");
 
-        myMap.buildings.get(2).moveIn(firstYears);
+        ArrayList<String> newSeries = new ArrayList<String>();
+
+        newSeries.add("Hunger Games by Suzanne Collins");
+        newSeries.add("Catching Fire by Suzanne Collins");
+        newSeries.add("Mockingjay by Suzanne Collins");
 
         System.out.println(myMap);
     }

@@ -105,6 +105,8 @@ public class Cafe extends Building{
         myCafe.sellCoffee(12, 3, 1);
         myCafe.sellCoffee(400, 1000, 10000);
 
+        myCafe.sellCoffee();
+
         myCafe.enter();
         myCafe.goToFloor(3);
     }
