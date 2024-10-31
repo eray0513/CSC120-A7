@@ -9,6 +9,15 @@ public class House extends Building {
   private boolean hasDiningRoom;
 
   /**
+   * Has dining room
+   */
+  public House(){
+    super();
+    this.hasDiningRoom = true;
+    this.hasElevator = false;
+  }
+
+  /**
    * Constructs a house object, using the Building constructor
    * @param name // parameter of super
    * @param address // parameter of super
@@ -47,6 +56,16 @@ public class House extends Building {
       throw new RuntimeException(name + " already lives here. Move in failed.");
     } else {
       this.residents.add(name);
+    }
+  }
+
+  /**
+   * Overload moveIn method to allow for moving in multiple people at once
+   * @param names
+   */
+  public void moveIn(ArrayList<String> names){
+    for(String n : names){
+      this.moveIn(n);
     }
   }
 
@@ -94,7 +113,7 @@ public class House extends Building {
     try{
       myHouse.moveIn("Evelyn");
     } catch (Exception e){
-      System.out.println("Resident already lives here. Move in failed.");
+      System.out.println(e);
     }
 
     System.out.println(myHouse.moveOut("Evelyn"));
@@ -102,7 +121,7 @@ public class House extends Building {
     try{
       System.out.println(myHouse.moveOut("Evelyn"));
     } catch (Exception e){
-      System.out.println("Resident does not live here. Move out failed.");
+      System.out.println(e);
     }
   }
 

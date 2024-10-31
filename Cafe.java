@@ -7,6 +7,17 @@ public class Cafe extends Building{
     private int nCups; //inventory of cups
 
     /**
+     * Default constructor
+     */
+    public Cafe(){
+        super();
+        this.nCoffeeOunces = 80;
+        this.nSugarPackets = 20;
+        this.nCreams = 20;
+        this.nCups = 20;
+    }
+
+    /**
      * Constructs a cafe object using super class (building)
      * @param name name of cafe
      * @param address address of cafe
@@ -23,6 +34,14 @@ public class Cafe extends Building{
         this.nCreams = nCre;
         this.nCups = nCup;
         System.out.println("You have built a cafe: ☕");
+    }
+
+    /**
+     * Sell a basic, default cup of coffee
+     */
+    public void sellCoffee(){
+        this.nCoffeeOunces -= 10;
+        this.nCups -= 1;
     }
 
     /**

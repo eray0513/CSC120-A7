@@ -7,6 +7,14 @@ public class Library extends Building {
   private Hashtable < String, Boolean > collection;
 
   /**
+   * Default constructor
+   */
+  public Library(){
+    super();
+    this.collection = new Hashtable<String,Boolean>();
+  }
+
+  /**
    * Constructs a library object that uses the building superclass and initializes the collection to be empty
    * @param name name of library (superclass)
    * @param address address of library (superclass)
