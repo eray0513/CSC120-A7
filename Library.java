@@ -1,5 +1,6 @@
-// import Hashtable class
+// import Hashtable and ArrayList class
 import java.util.Hashtable;
+import java.util.ArrayList;
 /* This is a stub for the Library class */
 public class Library extends Building {
 
@@ -12,6 +13,7 @@ public class Library extends Building {
   public Library(){
     super();
     this.collection = new Hashtable<String,Boolean>();
+    System.out.println("You have built a library: 📖");
   }
 
   /**
@@ -32,6 +34,16 @@ public class Library extends Building {
    */
   public void addTitle(String title) {
     this.collection.put(title, true);
+  }
+
+  /**
+   * Overload addTitle method to add multiple titles at once
+   * @param titles
+   */
+  public void addTitle(ArrayList<String> titles){
+    for(String t : titles){
+      this.addTitle(t);
+    }
   }
 
   /**
@@ -63,6 +75,16 @@ public class Library extends Building {
       }
     } else {
       throw new RuntimeException("The library does not contain this title");
+    }
+  }
+
+  /**
+   * Overloads checkOut method to allow multiple titles to be checked out at once
+   * @param titles
+   */
+  public void checkOut(ArrayList<String> titles){
+    for(String t : titles){
+      this.checkOut(t);
     }
   }
 

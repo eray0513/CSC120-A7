@@ -15,6 +15,7 @@ public class Cafe extends Building{
         this.nSugarPackets = 20;
         this.nCreams = 20;
         this.nCups = 20;
+        System.out.println("You have built a cafe: ☕");
     }
 
     /**

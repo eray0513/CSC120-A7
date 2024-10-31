@@ -15,6 +15,7 @@ public class House extends Building {
     super();
     this.hasDiningRoom = true;
     this.hasElevator = false;
+    System.out.println("You have built a house: 🏠");
   }
 
   /**
