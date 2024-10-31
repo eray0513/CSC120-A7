@@ -17,6 +17,20 @@ public class Cafe extends Building{
         this.nCups = 20;
         System.out.println("You have built a cafe: ☕");
     }
+    
+    /**
+     * Overload constructor with name and address
+     * @param name of the cafe
+     * @param address of the cafe
+     */
+    public Cafe(String name, String address){
+        super(name, address);
+        this.nCoffeeOunces = 80;
+        this.nSugarPackets = 20;
+        this.nCreams = 20;
+        this.nCups = 20;
+        System.out.println("You have built a cafe: ☕");
+    }
 
     /**
      * Constructs a cafe object using super class (building)

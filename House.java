@@ -19,6 +19,17 @@ public class House extends Building {
   }
 
   /**
+   * Overload constructor with just name and address
+   * @param name of house
+   * @param address of house
+   * @param nFloors number of floors
+   */
+  public House(String name, String address, int nFloors){
+    super(name, address);
+    this.nFloors = nFloors;
+  }
+
+  /**
    * Constructs a house object, using the Building constructor
    * @param name // parameter of super
    * @param address // parameter of super
@@ -125,5 +136,8 @@ public class House extends Building {
       System.out.println(e);
     }
   }
+
+    ArrayList<String> secondYears = new ArrayList<String>();
+
 
 }

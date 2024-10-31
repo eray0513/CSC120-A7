@@ -44,8 +44,25 @@ public class CampusMap {
         CampusMap myMap = new CampusMap();
         myMap.addBuilding(new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4, false));
         myMap.addBuilding(new Building("Bass Hall", "4 Tyler Court Northampton, MA 01063", 4, false));
-        myMap.addBuilding(new House("Jordan", "1 Paradise Rd", 4, false, false));
-        myMap.addBuilding(new Library("Neilson", "1 Seelye", 5, true));
+        myMap.addBuilding(new House("Jordan", "1 Paradise Rd", 4));
+        myMap.addBuilding(new House());
+        myMap.addBuilding(new Library("Neilson", "7 Neilson Dr", 5, true));
+        myMap.addBuilding(new Library());
+        myMap.addBuilding(new House("Scale", "170 Elm St", 4, true, true));
+        myMap.addBuilding(new Cafe("Woodstar", "60 Masonic St"));
+        myMap.addBuilding(new House("Wilson", "1 Paradise Rd", 4));
+        myMap.addBuilding(new Cafe("The Roost", "1 Market St", 1, 200, 100, 50, 500));
+        myMap.addBuilding(new Cafe());
+        myMap.addBuilding(new Library("Forbes", "20 West St", 4, true));
+
+        ArrayList<String> firstYears = new ArrayList<String>();
+        firstYears.add("Evelyn");
+        firstYears.add("Madeleine");
+        firstYears.add("Ruby");
+        firstYears.add("Vivi");
+
+        myMap.buildings.get(2).moveIn(firstYears);
+
         System.out.println(myMap);
     }
     
