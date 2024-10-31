@@ -70,6 +70,9 @@ public class Cafe extends Building{
         // Test sell coffee method and restock method within
         myCafe.sellCoffee(12, 3, 1);
         myCafe.sellCoffee(400, 1000, 10000);
+
+        myCafe.enter();
+        myCafe.goToFloor(3);
     }
     
 }

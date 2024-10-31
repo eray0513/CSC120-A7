@@ -69,16 +69,16 @@ public class Building {
     }
 
     public void goToFloor(int floorNum) {
-        if(this.hasElevator = false){
-            if(this.activeFloor - floorNum != 1 || this.activeFloor - floorNum != -1){
-                throw new RuntimeException("No elevator present. You cannot move between non-adjacent floors.");
-            }
-        }
         if (this.activeFloor == -1) {
             throw new RuntimeException("You are not inside this Building. Must call enter() before navigating between floors.");
         }
         if (floorNum < 1 || floorNum > this.nFloors) {
             throw new RuntimeException("Invalid floor number. Valid range for this Building is 1-" + this.nFloors +".");
+        }
+        if(!this.hasElevator){
+            if(this.activeFloor - floorNum != 1 || this.activeFloor - floorNum != -1){
+                throw new RuntimeException("No elevator present. You cannot move between non-adjacent floors.");
+            }
         }
         System.out.println("You are now on floor #" + floorNum + " of " + this.name);
         this.activeFloor = floorNum;
@@ -105,7 +105,7 @@ public class Building {
         System.out.println("Test of Building constructor/methods");
         System.out.println("------------------------------------");
         
-        Building fordHall = new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4, true);
+        Building fordHall = new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4, false);
         System.out.println(fordHall);
         fordHall.showOptions();
 
@@ -113,6 +113,7 @@ public class Building {
         System.out.println("Demonstrating enter/exit/navigation");
         System.out.println("-----------------------------------");
         fordHall.enter();
+        fordHall.goToFloor(3);
         fordHall.goUp();
         fordHall.goDown();
         fordHall.exit();
