@@ -4,10 +4,11 @@ public class Building {
     protected String address;
     protected int nFloors;
     protected int activeFloor = -1; // Default value indicating we are not inside this building
+    protected boolean hasElevator;
 
     /* Default constructor */
     public Building() {
-        this("<Name Unknown>", "<Address Unknown>", 1);
+        this("<Name Unknown>", "<Address Unknown>", 1, false);
     }
 
     /* Overloaded constructor with address only */
@@ -18,17 +19,18 @@ public class Building {
 
     /* Overloaded constructor with name, address */
     public Building(String name, String address) {
-        this(name, address, 1); // Call full constructor with hard-coded # floors
+        this(name, address, 1, false); // Call full constructor with hard-coded # floors
     }
 
     /* Full constructor */
-    public Building(String name, String address, int nFloors) {
+    public Building(String name, String address, int nFloors, boolean hasElevator) {
         if (name != null) { this.name = name; }
         if (address != null) { this.address = address; } 
         if (nFloors < 1) {
             throw new RuntimeException("Cannot construct a building with fewer than 1 floor.");
         }
         this.nFloors = nFloors;
+        this.hasElevator = hasElevator;
     }
 
     /* Accessors */
@@ -67,6 +69,11 @@ public class Building {
     }
 
     public void goToFloor(int floorNum) {
+        if(this.hasElevator = false){
+            if(this.activeFloor - floorNum != 1 || this.activeFloor - floorNum != -1){
+                throw new RuntimeException("No elevator present. You cannot move between non-adjacent floors.");
+            }
+        }
         if (this.activeFloor == -1) {
             throw new RuntimeException("You are not inside this Building. Must call enter() before navigating between floors.");
         }
@@ -98,7 +105,7 @@ public class Building {
         System.out.println("Test of Building constructor/methods");
         System.out.println("------------------------------------");
         
-        Building fordHall = new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4);
+        Building fordHall = new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4, true);
         System.out.println(fordHall);
         fordHall.showOptions();
 
