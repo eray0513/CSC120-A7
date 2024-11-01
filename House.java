@@ -9,7 +9,7 @@ public class House extends Building {
   private boolean hasDiningRoom;
 
   /**
-   * Has dining room
+   * Default constructor
    */
   public House(){
     super();
@@ -31,10 +31,10 @@ public class House extends Building {
 
   /**
    * Constructs a house object, using the Building constructor
-   * @param name // parameter of super
-   * @param address // parameter of super
-   * @param nFloors // parameter of super
-   * @param dining // whether or not it has a dining room
+   * @param name parameter of super
+   * @param address parameter of super
+   * @param nFloors parameter of super
+   * @param dining whether or not it has a dining room
    */
   public House(String name, String address, int nFloors, boolean dining, boolean hasElevator) {
     super(name, address, nFloors, hasElevator);

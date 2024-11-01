@@ -42,18 +42,32 @@ public class CampusMap {
 
     public static void main(String[] args) {
         CampusMap myMap = new CampusMap();
-        myMap.addBuilding(new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4, false));
-        myMap.addBuilding(new Building("Bass Hall", "4 Tyler Court Northampton, MA 01063", 4, false));
-        myMap.addBuilding(new House("Jordan", "1 Paradise Rd", 4));
-        myMap.addBuilding(new House());
-        myMap.addBuilding(new Library("Neilson", "7 Neilson Dr", 5, true));
-        myMap.addBuilding(new Library());
-        myMap.addBuilding(new House("Scale", "170 Elm St", 4, true, true));
-        myMap.addBuilding(new Cafe("Woodstar", "60 Masonic St"));
-        myMap.addBuilding(new House("Wilson", "1 Paradise Rd", 4));
-        myMap.addBuilding(new Cafe("The Roost", "1 Market St", 1, 200, 100, 50, 500));
-        myMap.addBuilding(new Cafe());
-        myMap.addBuilding(new Library("Forbes", "20 West St", 4, true));
+
+        Building ford = new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4, false);
+        Building bass = new Building("Bass Hall", "4 Tyler Court Northampton, MA 01063", 4, false);
+        House jordan = new House("Jordan", "1 Paradise Rd", 4);
+        House unknown = new House();
+        Library neilson = new Library("Neilson", "7 Neilson Dr", 5, true);
+        Library unknown2 = new Library();
+        House scales = new House("Scales", "170 Elm St", 4, true, true);
+        Cafe woodstar = new Cafe("Woodstar", "60 Masonic St");
+        House wilson = new House("Wilson", "1 Paradise Rd", 4);
+        Cafe roost = new Cafe("The Roost", "1 Market St", 1, 200, 100, 50, 500);
+        Cafe unknown3 = new Cafe();
+        Library forbes = new Library("Forbes", "20 West St", 4, true);
+
+        myMap.addBuilding(ford);
+        myMap.addBuilding(bass);
+        myMap.addBuilding(jordan);
+        myMap.addBuilding(unknown);
+        myMap.addBuilding(neilson);
+        myMap.addBuilding(unknown2);
+        myMap.addBuilding(scales);
+        myMap.addBuilding(woodstar);
+        myMap.addBuilding(wilson);
+        myMap.addBuilding(roost);
+        myMap.addBuilding(unknown3);
+        myMap.addBuilding(forbes);
 
         ArrayList<String> firstYears = new ArrayList<String>();
         firstYears.add("Evelyn");
@@ -61,13 +75,15 @@ public class CampusMap {
         firstYears.add("Ruby");
         firstYears.add("Vivi");
 
+        jordan.moveIn(firstYears);
+
         ArrayList<String> newSeries = new ArrayList<String>();
 
         newSeries.add("Hunger Games by Suzanne Collins");
         newSeries.add("Catching Fire by Suzanne Collins");
         newSeries.add("Mockingjay by Suzanne Collins");
 
-         myMap.buildings.get(4).addTitle(newSeries);
+        neilson.addTitle(newSeries);
 
         System.out.println(myMap);
     }
