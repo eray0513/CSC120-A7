@@ -15,6 +15,7 @@ public class House extends Building {
     super();
     this.hasDiningRoom = true;
     this.hasElevator = false;
+    this.residents = new ArrayList<String>();
     System.out.println("You have built a house: 🏠");
   }
 
@@ -26,6 +27,9 @@ public class House extends Building {
    */
   public House(String name, String address, int nFloors){
     super(name, address);
+    this.hasDiningRoom = true;
+    this.hasElevator = false;
+    this.residents = new ArrayList<String>();
     this.nFloors = nFloors;
   }
 
@@ -146,7 +150,7 @@ public class House extends Building {
     myHouse.moveIn(secondYears);
 
     System.out.println(myHouse.moveOut("Kylie"));
-
+    System.out.println(myHouse.moveOut("Renee"));
     System.out.println(myHouse.moveOut("Lisa"));
   }
 

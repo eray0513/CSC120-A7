@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CampusMap {
 
@@ -85,7 +86,15 @@ public class CampusMap {
 
         neilson.addTitle(newSeries);
 
+        woodstar.sellCoffee();
+
         System.out.println(myMap);
+
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Welcome to Smith College! Pick a building to enter by typing its cooresponding number.");
+        
+        
     }
     
 }
