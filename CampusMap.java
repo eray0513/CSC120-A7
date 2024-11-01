@@ -67,7 +67,7 @@ public class CampusMap {
         newSeries.add("Catching Fire by Suzanne Collins");
         newSeries.add("Mockingjay by Suzanne Collins");
 
-        (Library) myMap.buildings.get(4).addTitle(newSeries);
+         myMap.buildings.get(4).addTitle(newSeries);
 
         System.out.println(myMap);
     }
