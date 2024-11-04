@@ -96,6 +96,8 @@ public class CampusMap {
         
         while (cont){
             System.out.println("Welcome to Smith College! Pick a building to enter by typing its cooresponding number. You can stop the adventure at anytime by entering STOP.");
+            int choice = input.nextInt();
+            
         }
         
     }
