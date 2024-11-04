@@ -91,10 +91,12 @@ public class CampusMap {
         System.out.println(myMap);
 
         Scanner input = new Scanner(System.in);
+
+        boolean cont = true;
         
-        System.out.println("Welcome to Smith College! Pick a building to enter by typing its cooresponding number.");
-        
+        while (cont){
+            System.out.println("Welcome to Smith College! Pick a building to enter by typing its cooresponding number. You can stop the adventure at anytime by entering STOP.");
+        }
         
     }
-    
 }
