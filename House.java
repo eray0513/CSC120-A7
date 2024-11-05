@@ -20,7 +20,7 @@ public class House extends Building {
   }
 
   /**
-   * Overload constructor with just name and address
+   * Overload constructor with just name and address and number of floors
    * @param name of house
    * @param address of house
    * @param nFloors number of floors
