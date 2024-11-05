@@ -93,11 +93,39 @@ public class CampusMap {
         Scanner input = new Scanner(System.in);
 
         boolean cont = true;
+
+        System.out.println("Welcome to Smith College! Pick a building to enter by typing its cooresponding number. You can stop the adventure at anytime by entering STOP.");
         
+        int choice;
+
+        try{
+            choice = input.nextInt();
+        }catch(Exception TypeMismatchException){
+            choice = 1;
+            System.out.println("Non-integer detected. Entering default building one.");
+        }
+
         while (cont){
-            System.out.println("Welcome to Smith College! Pick a building to enter by typing its cooresponding number. You can stop the adventure at anytime by entering STOP.");
-            int choice = input.nextInt();
-            
+            int current = choice -1;
+           myMap.buildings.get(current).enter();
+           myMap.buildings.get(current).showOptions();
+           System.out.println("Where would you like to go next? Enter STOP to exit the adventure.");
+           try{
+            choice = input.nextInt();
+           }catch(Exception TypeMismatchException){
+            System.out.println("Are you sure you want to quit? If yes, enter STOP. If no, enter CONTINUE.");
+            input.nextLine();
+            String leaveLoop = input.next();
+            if(leaveLoop.equals("STOP")){
+                cont = false;
+                System.out.println("Goodbye!");
+                break;
+            }else{
+                System.out.println("Enter an integer for the building you would like to enter.");
+                choice = input.nextInt();
+            }
+           }
+           myMap.buildings.get(current).exit();
         }
         
     }
