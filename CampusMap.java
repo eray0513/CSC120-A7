@@ -122,6 +122,7 @@ public class CampusMap {
       int current = choice - 1;
       myMap.buildings.get(current).enter(); // Enter chosen building
       myMap.buildings.get(current).showOptions(); // Print the options
+      
       System.out.println("Where would you like to go next? Enter STOP to exit the adventure.");
       // Catches non integers and sees if they are a stop command
       try {
